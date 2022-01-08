@@ -1,0 +1,8 @@
+{
+	"name": "White List",
+	"author": "Alexis Degrugillier",
+	"description": "White list the accessible feeds to users",
+	"version": "0.0.1",
+	"entrypoint": "WhiteList",
+	"type": "system"
+}
