@@ -4,7 +4,11 @@ class WhiteListExtension extends Minz_Extension {
     public function init(): void {
         $this->registerTranslates();
 
-        $this->registerHook('check_url_before_add', [$this, 'checkWhiteList']);
+        if (version_compare(FRESHRSS_VERSION, 1.28) >= 0) {
+            $this->registerHook(Minz_HookType::CheckUrlBeforeAdd, [$this, 'checkWhiteList']);
+        } else {
+            $this->registerHook('check_url_before_add', [$this, 'checkWhiteList']);
+        }
     }
 
     public function handleConfigureAction(): void {
